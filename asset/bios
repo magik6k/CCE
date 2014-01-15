@@ -1,0 +1,48 @@
+
+function brn()
+	function t()
+	print("it works")
+	end
+	t()
+	print(cce)
+	print(io)
+	print(coroutine)
+	print(coroutine.running())
+	--cce.poolEvent()
+	for k,v in pairs(_G) do
+		print(k,"=",v)
+	end
+	print("\n\n")
+	for k,v in pairs(os) do
+		print("os.",k,"=",v)
+	end
+	print("\n\n")
+	for k,v in pairs(io) do
+		print("io.",k,"=",v)
+	end
+
+	local cce = _G.cce
+	_G.cce = nil
+
+	print("\n\n")
+	for k,v in pairs(cce) do
+		print("cce.",k,"=",v)
+	end
+
+	print("\n\n")
+	for k,v in pairs(cce.term) do
+		print("cce.term.",k,"=",v)
+	end
+	while true do
+		e = {cce.poolEvent()}
+		if(e[2] == 99)then
+			cce.term.clear()
+		end
+		if(e[2] == 97)then
+			cce.term.clear()
+			cce.term.setCursorPos(8,8)
+		end
+		print(unpack(e))
+	end
+end
+print(pcall(brn))
